@@ -5,10 +5,10 @@ const browserSync = require('browser-sync').create();
 const reload = browserSync.reload;
 /* SASS Option */
 const option = {
-  /*
+  //*
   outputStyle: 'expanded',
   /*/
-  outputStyle :"compressed",
+  outputStyle: 'compressed',
   //*/
   includePaths: ['scss/'],
 };

@@ -5,18 +5,23 @@
 
 .row {
   @include flexbox();
+  @include flex-wrap(wrap)
 }
 
 .col {
+  position: relative;
   -ms-flex-preferred-size: 0;
   @include flex-basis(0);
   -ms-flex-positive: 1;
   @include flex-grow(1);
   max-width: 100%;
+  width: 100%;
+  min-height: 1px;
 }
 @for $i from 1 through 12 {
   .col--#{$i} {
     @include flex(0 0 percentage($i / 12));
+    width: 100%;
     max-width: percentage($i / 12);
   }
   .order--#{$i} {
@@ -25,7 +30,7 @@
 }
 
 @each $point, $width in $breakpoint {
-  @media screen and (min-width: $width) {
+  @media (min-width: $width) {
     @for $i from 1 through 12 {
       .col--#{$point}-#{$i} {
         @include flex(0 0 percentage($i / 12));
@@ -33,6 +38,9 @@
       }
       .order--#{$point}-#{$i} {
         @include order($i);
+      }
+      .offset--#{$point}-#{$i} {
+        margin-left: percentage($i / 12);
       }
     }
   }
