@@ -5,7 +5,7 @@ const browserSync = require('browser-sync').create();
 const reload = browserSync.reload;
 /* SASS Option */
 const option = {
-  //*
+  /*
   outputStyle: 'expanded',
   /*/
   outputStyle :"compressed",
@@ -35,4 +35,4 @@ gulp.task('browser-sync', () => {
   });
 });
 
-gulp.task('default', ['sass']);
+gulp.task('default', ['sass', 'watch']);

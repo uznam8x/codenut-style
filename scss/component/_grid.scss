@@ -1,0 +1,41 @@
+@import "variable";
+@import "mixin/flex";
+@import "mixin/bem";
+
+
+.row {
+  @include flexbox();
+}
+
+.col {
+  -ms-flex-preferred-size: 0;
+  @include flex-basis(0);
+  -ms-flex-positive: 1;
+  @include flex-grow(1);
+  max-width: 100%;
+}
+@for $i from 1 through 12 {
+  .col--#{$i} {
+    @include flex(0 0 percentage($i / 12));
+    max-width: percentage($i / 12);
+  }
+  .order--#{$i} {
+    @include order($i);
+  }
+}
+
+@each $point, $width in $breakpoint {
+  @media screen and (min-width: $width) {
+    @for $i from 1 through 12 {
+      .col--#{$point}-#{$i} {
+        @include flex(0 0 percentage($i / 12));
+        max-width: percentage($i / 12);
+      }
+      .order--#{$point}-#{$i} {
+        @include order($i);
+      }
+    }
+  }
+}
+
+
