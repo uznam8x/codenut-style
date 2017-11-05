@@ -1,8 +1,3 @@
-@import "variable";
-@import "mixin/flex";
-@import "mixin/bem";
-
-
 .row {
   @include flexbox();
   @include flex-wrap(wrap)

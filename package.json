@@ -1,6 +1,6 @@
 {
   "name": "codenut-style",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "codenut css framework",
   "main": "index.js",
   "scripts": {
@@ -12,14 +12,14 @@
     "url": "git+https://github.com/uznam8x/codenut-style.git"
   },
   "keywords": [
-    "codenut"
+    "codenut","css framework","codenut-style","prisf", "uznam8x"
   ],
   "author": "uznam8x",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/uznam8x/codenut-style/issues"
   },
-  "homepage": "https://github.com/uznam8x/codenut-style#readme",
+  "homepage": "http://codenut.prisf.com",
   "dependencies": {
     "gulp": "^3.9.1",
     "gulp-sass": "^3.1.0",
