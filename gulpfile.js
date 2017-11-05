@@ -35,4 +35,4 @@ gulp.task('browser-sync', () => {
   });
 });
 
-gulp.task('default', ['sass', 'watch']);
+gulp.task('default', ['sass', 'watch', 'browser-sync']);
