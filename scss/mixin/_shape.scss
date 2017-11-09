@@ -1,0 +1,63 @@
+@mixin shape() {
+  display: inline-block;
+  overflow: hidden;
+  @content;
+}
+
+@mixin shape-circle() {
+  @include shape();
+  @content;
+}
+
+@mixin shape-triangle($type, $size , $color) {
+  @include shape();
+  width: 0;
+  height: 0;
+  @if $type == up {
+    border-right: $size / 2 solid transparent;
+    border-bottom: $size solid $color;
+    border-left: $size / 2 solid transparent;
+  }
+  @if $type == down {
+    border-top: $size solid $color;
+    border-right: $size / 2 solid transparent;
+    border-left: $size / 2 solid transparent;
+  }
+  @if $type == left {
+    border-top: $size / 2 solid transparent;
+    border-right: $size solid $color;
+    border-bottom: $size / 2 solid transparent;
+  }
+  @if $type == right {
+    border-top: $size / 2 solid transparent;
+    border-bottom: $size / 2 solid transparent;
+    border-left: $size solid $color;
+  }
+  @if $type == top-left {
+    border-top: $size solid $color;
+    border-right: $size solid transparent;
+  }
+  @if $type == top-right {
+    border-top: $size solid $color;
+    border-left: $size solid transparent;
+  }
+  @if $type == bottom-left {
+    border-right: $size solid transparent;
+    border-bottom: $size solid $color;
+  }
+  @if $type == bottom-right {
+    border-bottom: $size solid $color;
+    border-left: $size solid transparent;
+  }
+  @content;
+}
+
+@mixin shape-ribbon($width, $height, $color){
+  @include shape();
+  display: inline-block;
+  text-overflow: clip;
+  border: $width / 2 solid $color;
+  border-top-width: $height - ($width / 2);
+  border-bottom: $width / 2 solid transparent;
+  width: 0;
+}

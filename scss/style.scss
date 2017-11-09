@@ -2,7 +2,11 @@
 @import "mixin/flex";
 @import "mixin/bem";
 @import "mixin/crossbrowser";
+@import "mixin/shape";
 @import "function/rem";
+@import "function/rgb";
+@import "base/initialize";
+@import "base/regular";
 
-@import "base/*";
+@import "component/grid";
 @import "component/*";

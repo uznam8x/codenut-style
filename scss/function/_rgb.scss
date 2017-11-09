@@ -1,0 +1,3 @@
+@function rgb($color) {
+  @return rgba($color, 1);
+}
