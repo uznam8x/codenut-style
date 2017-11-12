@@ -1,8 +1,8 @@
-@-ms-viewport{
+@-ms-viewport {
   width: device-width;
 }
 
-@-o-viewport{
+@-o-viewport {
   width: device-width;
 }
 
@@ -20,17 +20,24 @@
 }
 
 html {
+  font-size: 16px;
   line-height: 1;
 
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
 
   -ms-overflow-style: scrollbar;
-  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+  &::before {
+    display: none;
+    content: "{breakpoint:#{$breakpoint}}";
+  }
 }
 
-body {
-  font-size: 16px;
+html, body {
+  width: 100%;
+  height: 100%;
 }
 
 article,
