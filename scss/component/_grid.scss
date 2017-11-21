@@ -1,26 +1,29 @@
 .row {
-  @include flexbox();
-  @include flex-wrap(wrap)
+  &::before, &::after {
+    display: table;
+    content: ' ';
+  }
+  &::after {
+    clear: both;
+  }
 }
 
-.col {
+[class^="col"] {
   position: relative;
-  -ms-flex-preferred-size: 0;
-  @include flex-basis(0);
-  -ms-flex-positive: 1;
-  @include flex-grow(1);
-  max-width: 100%;
+  float: left;
   width: 100%;
-  min-height: 1px;
 }
+
+
 @for $i from 1 through 12 {
   .col--#{$i} {
-    @include flex(0 0 percentage($i / 12));
-    width: 100%;
-    max-width: percentage($i / 12);
+    width: percentage($i / 12);
   }
-  .order--#{$i} {
-    @include order($i);
+  .push--#{$i} {
+    left: percentage($i / 12);
+  }
+  .pull--#{$i} {
+    left: percentage(-$i / 12);
   }
 }
 
@@ -28,17 +31,17 @@
   @media (min-width: $width) {
     @for $i from 1 through 12 {
       .col--#{$point}-#{$i} {
-        @include flex(0 0 percentage($i / 12));
-        max-width: percentage($i / 12);
+        width: percentage($i / 12);
       }
-      .order--#{$point}-#{$i} {
-        @include order($i);
+      .push--#{$point}-#{$i} {
+        left: percentage($i / 12);
       }
       .offset--#{$point}-#{$i} {
         margin-left: percentage($i / 12);
       }
+      .pull--#{$point}-#{$i} {
+        left: percentage(-$i / 12);
+      }
     }
   }
 }
-
-

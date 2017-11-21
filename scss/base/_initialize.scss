@@ -97,10 +97,11 @@ button,
 [role="button"] {
   cursor: pointer;
 }
-
+a,
 button,
 select {
   text-transform: none;
+  cursor: pointer;
 }
 
 button,

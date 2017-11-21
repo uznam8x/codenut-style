@@ -12,7 +12,11 @@
     "url": "git+https://github.com/uznam8x/codenut-style.git"
   },
   "keywords": [
-    "codenut","css framework","codenut-style","prisf", "uznam8x"
+    "codenut",
+    "css framework",
+    "codenut-style",
+    "prisf",
+    "uznam8x"
   ],
   "author": "uznam8x",
   "license": "MIT",
