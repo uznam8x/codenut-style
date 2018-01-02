@@ -16,10 +16,3 @@ $breakpoint: (
   lg: 375px,
   xl: 414px
 ) !default;
-
-html {
-  &::before {
-    display: none;
-    content: "{breakpoint:#{$breakpoint}}";
-  }
-}

@@ -11,3 +11,9 @@
 @import "component/grid";
 @import "component/typo";
 
+html {
+  &::before {
+    display: none;
+    content: "{breakpoint:#{$breakpoint}}";
+  }
+}
