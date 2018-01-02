@@ -3,9 +3,11 @@
 @import "mixin/bem";
 @import "mixin/crossbrowser";
 @import "mixin/shape";
+@import "mixin/mediaquery";
 @import "function/rem";
 @import "base/initialize";
 @import "base/regular";
 
 @import "component/grid";
+@import "component/typo";
 

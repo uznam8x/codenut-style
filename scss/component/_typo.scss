@@ -1,0 +1,12 @@
+html {
+  font-size: $font-base;
+}
+*{
+  font-family: $font-family;
+}
+
+@each $point, $size in $font-heading {
+  #{$point} {
+    font-size: ($size / $font-base)+rem;
+  }
+}

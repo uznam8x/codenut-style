@@ -1,0 +1,121 @@
+// breakpoint
+@mixin x-small() {
+  @media only screen and(min-width: map_get($breakpoint, 'xs')) {
+    @content;
+  }
+}
+
+@mixin small() {
+  @media only screen and(min-width: map_get($breakpoint, 'sm')) {
+    @content;
+  }
+}
+
+@mixin medium() {
+  @media only screen and(min-width: map_get($breakpoint, 'md')) {
+    @content;
+  }
+}
+
+@mixin large() {
+  @media only screen and(min-width: map_get($breakpoint, 'lg')) {
+    @content;
+  }
+}
+
+@mixin x-large() {
+  @media only screen and(min-width: map_get($breakpoint, 'xl')) {
+    @content;
+  }
+}
+
+// iphone
+@mixin iphone4() {
+  @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
+    @content;
+  }
+}
+
+@mixin iphone4-portrait() {
+  @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+    @content;
+  }
+}
+
+@mixin iphone4-landscape() {
+  @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+    @content;
+  }
+}
+
+@mixin iphone5() {
+  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) {
+    @content;
+  }
+}
+
+@mixin iphone5-portrait() {
+  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+    @content;
+  }
+}
+
+@mixin iphone5-landscape() {
+  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+    @content;
+  }
+}
+
+@mixin iphone6() {
+  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) {
+    @content;
+  }
+}
+
+@mixin iphone6-portrait() {
+  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+
+  }
+}
+
+@mixin iphone6-landscape() {
+  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+
+  }
+}
+
+@mixin iphone6-plus() {
+  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) {
+
+  }
+}
+
+@mixin iphone6-plus-portrait() {
+  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: portrait) {
+    @content;
+  }
+}
+
+@mixin iphone6-plus-landscape() {
+  @media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: landscape) {
+    @content;
+  }
+}
+
+@mixin iphonex() {
+  @media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) {
+    @content;
+  }
+}
+
+@mixin iphonex-portrait() {
+  @media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: portrait) {
+    @content;
+  }
+}
+
+@mixin iphonex-landscape() {
+  @media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: landscape) {
+    @content;
+  }
+}
