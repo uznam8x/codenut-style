@@ -1,6 +1,7 @@
 # [Codenut style](http://codenut.prisf.com)
 
-## Getting Started
+## Documentation
+https://uznam8x.github.io/codenut-style/
 
 ### npm
 ```bash
