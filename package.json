@@ -1,6 +1,6 @@
 {
   "name": "codenut-style",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "codenut css framework",
   "main": "index.js",
   "scripts": {
@@ -26,10 +26,11 @@
   "homepage": "http://codenut.prisf.com",
   "dependencies": {
     "gulp": "^3.9.1",
+    "gulp-nunjucks-render": "^2.2.2",
     "gulp-sass": "^3.1.0",
     "gulp-sass-glob": "^1.0.8"
   },
   "devDependencies": {
-    "browser-sync": "^2.18.13",
+    "browser-sync": "^2.18.13"
   }
 }

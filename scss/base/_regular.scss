@@ -87,7 +87,7 @@
   }
 }
 
-@for $i from 10 through 80 {
+@for $i from 2 through 80 {
   $num: $i * 2;
   .fz--#{$num} {
     font-size: rem($num * 1px) !important;
