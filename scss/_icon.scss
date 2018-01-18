@@ -35,8 +35,23 @@ $icon-color:#626262;
 .nut-icon--link{
   @include icon-link($icon-color);
 }
-// navigation
 
+// toggle
+.nut-icon--checkbox-checked{
+  @include icon-checkbox-checked($icon-color);
+}
+.nut-icon--checkbox-unchecked{
+  @include icon-checkbox-unchecked($icon-color);
+}
+
+.nut-icon--radiobox-checked{
+  @include icon-radiobox-checked($icon-color);
+}
+.nut-icon--radiobox-unchecked{
+  @include icon-radiobox-unchecked($icon-color);
+}
+
+// navigation
 .nut-icon--apps{
   @include icon-apps($icon-color);
 }
@@ -77,6 +92,9 @@ $icon-color:#626262;
 }
 .nut-icon--chevron-left{
   @include icon-chevron-left($icon-color);
+}
+.nut-icon--refresh{
+  @include icon-refresh($icon-color);
 }
 
 .nut-icon--close{
