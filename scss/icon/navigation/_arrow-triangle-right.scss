@@ -2,19 +2,21 @@
   $size: rem(8px);
   position: relative;
   color: $color;
-
-  &::before, &::after {
-    content: '';
+  & > i {
     position: absolute;
     left: 50%;
     top: 50%;
-    margin-top: -$size;
-    margin-left: -$size / 2;
-    width:0;
-    height:0;
-    border:$size transparent solid;
-    border-right-width:0;
-    border-left-color:currentColor;
+    &::before, &::after {
+      content: '';
+      position: absolute;
+      margin-top: -$size;
+      margin-left: -$size / 2;
+      width: 0;
+      height: 0;
+      border: $size transparent solid;
+      border-right-width: 0;
+      border-left-color: currentColor;
+    }
   }
   @content;
 }

@@ -1,0 +1,19 @@
+@mixin icon-remove($color) {
+  $size: 16px;
+  position: relative;
+  color: $color;
+  & > i {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-top: rem(-1px);
+    &::before {
+      content: "";
+      position: absolute;
+      width: rem($size);
+      height: rem(2px);
+      margin-left: rem(-$size/2);
+      background-color: currentColor;
+    }
+  }
+}

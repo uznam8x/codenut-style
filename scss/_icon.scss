@@ -8,14 +8,33 @@
 }
 
 $icon-color:#626262;
+
 // action
+.nut-icon--home{
+  @include icon-home($icon-color);
+}
 .nut-icon--search{
   @include icon-search($icon-color);
 }
 .nut-icon--bookmark{
   @include icon-bookmark($icon-color);
 }
+.nut-icon--bookmark-fill{
+  @include icon-bookmark-fill($icon-color);
+}
 
+// content
+.nut-icon--add{
+  @include icon-add($icon-color);
+}
+.nut-icon--remove{
+  @include icon-remove($icon-color);
+}
+
+// editor
+.nut-icon--link{
+  @include icon-link($icon-color);
+}
 // navigation
 
 .nut-icon--apps{

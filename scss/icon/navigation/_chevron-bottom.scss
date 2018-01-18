@@ -2,19 +2,23 @@
   $size: rem(16px);
   position: relative;
   color: $color;
-  &::before {
-    content: '';
+  & > i {
     position: absolute;
     left: 50%;
     top: 50%;
-    margin-top: rem(-13px);
-    margin-left: -$size/2;
-    width: $size;
-    height: $size;
-    border:rem(2px solid transparent);
-    border-top: rem(solid 2px currentColor);
-    border-right: rem(solid 2px currentColor);
-    @include transform(rotate(135deg));
+    &::before {
+      content: '';
+      position: absolute;
+      margin-top: rem(-13px);
+      margin-left: -$size/2;
+      width: $size;
+      height: $size;
+      border:rem(2px solid transparent);
+      border-top: rem(solid 2px currentColor);
+      border-right: rem(solid 2px currentColor);
+      @include transform(rotate(135deg));
+    }
   }
+
   @content;
 }

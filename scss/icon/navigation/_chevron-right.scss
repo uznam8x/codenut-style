@@ -2,19 +2,23 @@
   $size:rem(16px);
   position: relative;
   color: $color;
-  &::before{
-    content: '';
+  & > i {
     position: absolute;
     left: 50%;
-    top:50%;
-    margin-top: -$size/2;
-    margin-left: rem(-3px);
-    width: $size;
-    height: $size;
-    border:rem(2px solid transparent);
-    border-top: rem(solid 2px currentColor);
-    border-right: rem(solid 2px currentColor);
-    @include transform( rotate(-135deg) );
+    top: 50%;
+    &::before{
+      content: '';
+      position: absolute;
+      margin-top: -$size/2;
+      margin-left: rem(-3px);
+      width: $size;
+      height: $size;
+      border:rem(2px solid transparent);
+      border-top: rem(solid 2px currentColor);
+      border-right: rem(solid 2px currentColor);
+      @include transform( rotate(-135deg) );
+    }
   }
+
   @content;
 }
