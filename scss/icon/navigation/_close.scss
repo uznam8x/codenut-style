@@ -1,0 +1,26 @@
+@mixin icon-close($color) {
+  $size: rem(26px);
+  position: relative;
+  color: $color;
+
+  &::before, &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: rem(-1px);
+    margin-left: -$size/2;
+    width: $size;
+    height: 2px;
+    background-color: currentColor;
+
+  }
+  &::before {
+    @include transform(rotate(-45deg));
+  }
+  &::after {
+    @include transform(rotate(45deg));
+  }
+
+  @content;
+}

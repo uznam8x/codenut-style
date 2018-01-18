@@ -44,3 +44,10 @@
     }
   }
 }
+
+html {
+  &::before {
+    display: none;
+    content: "{breakpoint:#{$breakpoint}}";
+  }
+}

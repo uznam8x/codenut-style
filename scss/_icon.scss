@@ -1,0 +1,74 @@
+[class*="nut-icon"]{
+  display: inline-block;
+  width: rem(48px);
+  height: rem(48px);
+  //background: url(/dist/icon-guide.png) no-repeat center center;
+  //background-color: #f2f2f2;
+  //@include transform(scale(.5));
+}
+
+$icon-color:#626262;
+// action
+.nut-icon--search{
+  @include icon-search($icon-color);
+}
+.nut-icon--bookmark{
+  @include icon-bookmark($icon-color);
+}
+
+// navigation
+
+.nut-icon--apps{
+  @include icon-apps($icon-color);
+}
+.nut-icon--arrow-top{
+  @include icon-arrow-top($icon-color);
+}
+.nut-icon--arrow-right{
+  @include icon-arrow-right($icon-color);
+}
+.nut-icon--arrow-bottom{
+  @include icon-arrow-bottom($icon-color);
+}
+.nut-icon--arrow-left{
+  @include icon-arrow-left($icon-color);
+}
+
+.nut-icon--arrow-triangle-top{
+  @include icon-arrow-triangle-top($icon-color);
+}
+.nut-icon--arrow-triangle-right{
+  @include icon-arrow-triangle-right($icon-color);
+}
+.nut-icon--arrow-triangle-bottom{
+  @include icon-arrow-triangle-bottom($icon-color);
+}
+.nut-icon--arrow-triangle-left{
+  @include icon-arrow-triangle-left($icon-color);
+}
+
+.nut-icon--chevron-top{
+  @include icon-chevron-top($icon-color);
+}
+.nut-icon--chevron-right{
+  @include icon-chevron-right($icon-color);
+}
+.nut-icon--chevron-bottom{
+  @include icon-chevron-bottom($icon-color);
+}
+.nut-icon--chevron-left{
+  @include icon-chevron-left($icon-color);
+}
+
+.nut-icon--close{
+  @include icon-close($icon-color);
+}
+.nut-icon--more-horiz{
+  @include icon-more-horiz($icon-color);
+}
+.nut-icon--more-vert{
+  @include icon-more-vert($icon-color);
+}
+.nut-icon--menu{
+  @include icon-menu($icon-color);
+}

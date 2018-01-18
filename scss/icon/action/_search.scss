@@ -1,0 +1,30 @@
+@mixin icon-search($color) {
+  $size: 18px;
+  position: relative;
+  color: $color;
+  & > i {
+    display: inline-block;
+    position: absolute;
+    width: rem($size);
+    height: rem($size);
+    top:50%;
+    left:50%;
+    margin-top: rem((-$size/2) - 1);
+    margin-left: rem((-$size/2) - 1);
+    border: rem(solid 2px currentColor);
+    border-radius: 50%;
+    @include transform(rotate(-45deg));
+    &::before {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      margin-left: rem(-1px);
+      height: rem(7px);
+      width: rem(2px);
+      background-color: currentColor;
+    }
+  }
+
+  @content;
+}

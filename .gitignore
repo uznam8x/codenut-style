@@ -1,6 +1,4 @@
 .idea/
 .DS_Store
 node_modules
-develop/
 dist/page.css
-scss/page.scss

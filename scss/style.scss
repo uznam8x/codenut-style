@@ -10,10 +10,5 @@
 
 @import "component/grid";
 @import "component/typo";
-
-html {
-  &::before {
-    display: none;
-    content: "{breakpoint:#{$breakpoint}}";
-  }
-}
+@import "icon/**/*.scss";
+@import "icon";

@@ -1,0 +1,29 @@
+@mixin icon-arrow-right($color) {
+  $size: rem(16px);
+  position: relative;
+  color: $color;
+
+  &::before, &::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+  }
+  &::before {
+    width: $size+($size/4);
+    height: rem(2px);
+    margin-top: rem(-1px);
+    margin-left: -($size+($size/4))/2;
+    background-color: currentColor;
+  }
+  &::after {
+    width: $size;
+    height: $size;
+    margin-top: -$size/2;
+    margin-left: -$size/2;
+    border-bottom: rem(solid 2px currentColor);
+    border-right: rem(solid 2px currentColor);
+    @include transform(rotate(-45deg));
+  }
+  @content;
+}

@@ -1,0 +1,36 @@
+@mixin icon-more-horiz($color) {
+  $size: rem(4px);
+  position: relative;
+  color: $color;
+
+  & > i {
+    position: absolute;
+    display: inline-block;
+    width: $size;
+    height: $size;
+    background-color: currentColor;
+    border-radius: 50%;
+    left: 50%;
+    top: 50%;
+    margin-top: -$size/2;
+    margin-left: -$size/2;
+
+    &::before, &::after {
+      content: "";
+      position: absolute;
+      display: inline-block;
+      width: $size;
+      height: $size;
+      background-color: currentColor;
+      border-radius: 50%;
+    }
+    &::before {
+      top: -$size*2;
+    }
+    &::after {
+      top: $size*2;
+    }
+  }
+
+  @content;
+}

@@ -1,0 +1,35 @@
+@mixin icon-menu($color) {
+  $size: rem(24px);
+  position: relative;
+  color: $color;
+
+  & > i{
+    position: absolute;
+    display: inline-block;
+    width: $size;
+    height: rem(2px);
+    background-color: currentColor;
+    left: 50%;
+    top: 50%;
+    margin-top: rem(-1px);
+    margin-left: -$size/2;
+
+    &::before, &::after{
+      content: "";
+      position: absolute;
+      display: inline-block;
+      width: $size;
+      height: rem(2px);
+      background-color: currentColor;
+    }
+    &::before{
+      top:rem(-8px);
+    }
+    &::after{
+      top:rem(8px);
+    }
+  }
+
+
+  @content;
+}
