@@ -1,0 +1,5 @@
+develop
+.idea
+.DS_Store
+dist/icon-guide.png
+dist/page.css

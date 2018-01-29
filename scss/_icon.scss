@@ -2,9 +2,12 @@
   display: inline-block;
   width: rem(48px);
   height: rem(48px);
-  //background: url(/dist/icon-guide.png) no-repeat center center;
-  //background-color: #f2f2f2;
-  //@include transform(scale(.5));
+  position: relative;
+  & > i {
+    display: inline-block;
+    position: absolute;
+  }
+  background: url(/dist/icon-guide.png) no-repeat center center;
 }
 
 $icon-color:#626262;
