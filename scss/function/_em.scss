@@ -1,0 +1,36 @@
+@function em-separator($list) {
+  @if function-exists("list-separator") == true {
+    @return list-separator($list);
+  }
+
+  $test-list: ();
+  @each $item in $list {
+    $test-list: append($test-list, $item, space);
+  }
+
+  @return if($test-list == $list, space, comma);
+}
+
+@function em($values...) {
+  $context: $font-base;
+  $result: ();
+  $separator: em-separator($values);
+
+  @each $value in $values {
+    @if type-of($value) == "number" and unit($value) == "px" {
+      $result: append($result, $value / $context * 1em, $separator);
+    } @else if type-of($value) == "list" {
+      $result: append($result, em($value...), $separator);
+    } @else {
+      $result: append($result, $value, $separator);
+    }
+  }
+
+  @return if(length($result) == 1, nth($result, 1), $result);
+}
+
+@mixin em($properties, $values...) {
+  @each $property in map-keys($properties) {
+    #{$property}: em($values...);
+  }
+}

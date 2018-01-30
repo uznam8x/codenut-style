@@ -1,3 +1,33 @@
+@import "icon/action/bookmark";
+@import "icon/action/home";
+@import "icon/action/search";
+
+@import "icon/content/add";
+@import "icon/content/remove";
+@import "icon/editor/link";
+
+@import "icon/navigation/apps";
+@import "icon/navigation/arrow-bottom";
+@import "icon/navigation/arrow-left";
+@import "icon/navigation/arrow-right";
+@import "icon/navigation/arrow-top";
+@import "icon/navigation/arrow-triangle-bottom";
+@import "icon/navigation/arrow-triangle-left";
+@import "icon/navigation/arrow-triangle-right";
+@import "icon/navigation/arrow-triangle-top";
+@import "icon/navigation/chevron-bottom";
+@import "icon/navigation/chevron-left";
+@import "icon/navigation/chevron-right";
+@import "icon/navigation/chevron-top";
+@import "icon/navigation/close";
+@import "icon/navigation/menu";
+@import "icon/navigation/more-horiz";
+@import "icon/navigation/more-vert";
+@import "icon/navigation/refresh";
+
+@import "icon/toggle/checkbox";
+@import "icon/toggle/radiobox";
+
 [class*="nut-icon"]{
   display: inline-block;
   width: rem(48px);
