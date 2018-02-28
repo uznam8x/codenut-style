@@ -5,13 +5,13 @@
   & > i {
     display: inline-block;
     position: absolute;
-    width: rem($size);
-    height: rem($size);
+    width: em($size);
+    height: em($size);
     top:50%;
     left:50%;
-    margin-top: rem((-$size/2) - 1);
-    margin-left: rem((-$size/2) - 1);
-    border: rem(solid 2px currentColor);
+    margin-top: em((-$size/2) - 1);
+    margin-left: em((-$size/2) - 1);
+    border: em(solid 2px currentColor);
     border-radius: 50%;
     @include transform(rotate(-45deg));
     &::before {
@@ -19,9 +19,9 @@
       position: absolute;
       top: 100%;
       left: 50%;
-      margin-left: rem(-1px);
-      height: rem(7px);
-      width: rem(2px);
+      margin-left: em(-1px);
+      height: em(7px);
+      width: em(2px);
       background-color: currentColor;
     }
   }

@@ -1,5 +1,5 @@
 @mixin icon-chevron-top($color) {
-  $size: rem(16px);
+  $size: em(16px);
   position: relative;
   color: $color;
   & > i {
@@ -9,13 +9,13 @@
     &::before {
       content: '';
       position: absolute;
-      margin-top: rem(-3px);
+      margin-top: em(-3px);
       margin-left: -$size/2;
       width: $size;
       height: $size;
-      border: rem(2px solid transparent);
-      border-top: rem(solid 2px currentColor);
-      border-right: rem(solid 2px currentColor);
+      border: em(2px solid transparent);
+      border-top: em(solid 2px currentColor);
+      border-right: em(solid 2px currentColor);
       @include transform(rotate(-45deg));
     }
   }

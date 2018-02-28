@@ -1,5 +1,5 @@
 @mixin icon-arrow-top($color) {
-  $size: rem(16px);
+  $size: em(16px);
   position: relative;
   color: $color;
   & > i {
@@ -12,8 +12,8 @@
     }
     &::before {
       width: $size+($size/4);
-      height: rem(2px);
-      margin-top: rem(-1px);
+      height: em(2px);
+      margin-top: em(-1px);
       margin-left: -($size+($size/4))/2;
       background-color: currentColor;
       @include transform(rotate(90deg));
@@ -23,8 +23,8 @@
       height: $size;
       margin-top: -$size/2;
       margin-left: -$size/2;
-      border-top: rem(solid 2px currentColor);
-      border-left: rem(solid 2px currentColor);
+      border-top: em(solid 2px currentColor);
+      border-left: em(solid 2px currentColor);
       @include transform(rotate(45deg));
     }
   }

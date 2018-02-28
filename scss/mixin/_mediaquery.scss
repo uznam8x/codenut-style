@@ -1,30 +1,18 @@
 // breakpoint
-@mixin x-small() {
-  @media only screen and(min-width: map_get($breakpoint, 'xs')) {
+@mixin media-breakpoint-down($point) {
+  @media screen and(max-width: map_get($breakpoint, $point)) {
     @content;
   }
 }
 
-@mixin small() {
-  @media only screen and(min-width: map_get($breakpoint, 'sm')) {
+@mixin media-breakpoint-up($point) {
+  @media screen and(min-width: map_get($breakpoint, $point)) {
     @content;
   }
 }
 
-@mixin medium() {
-  @media only screen and(min-width: map_get($breakpoint, 'md')) {
-    @content;
-  }
-}
-
-@mixin large() {
-  @media only screen and(min-width: map_get($breakpoint, 'lg')) {
-    @content;
-  }
-}
-
-@mixin x-large() {
-  @media only screen and(min-width: map_get($breakpoint, 'xl')) {
+@mixin media-breakpoint-between($start, $end) {
+  @media screen and(min-width: map_get($breakpoint, $start)) and (max-width: map_get($breakpoint, $end)){
     @content;
   }
 }

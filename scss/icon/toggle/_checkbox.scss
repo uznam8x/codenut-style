@@ -1,5 +1,5 @@
 @mixin icon-checkbox-checked($color) {
-  $size: rem(22px);
+  $size: em(22px);
   position: relative;
   color: $color;
 
@@ -8,10 +8,10 @@
     display: inline-block;
     width: $size;
     height: $size;
-    border-radius: rem(4px);
+    border-radius: em(4px);
     left: 50%;
     top: 50%;
-    border: rem(2px solid currentColor);
+    border: em(2px solid currentColor);
     margin-top: -$size/2;
     margin-left: -$size/2;
 
@@ -20,12 +20,12 @@
       position: absolute;
       left: 50%;
       top: 50%;
-      width: rem(10px);
+      width: em(10px);
       height: $size/4;
       margin-top: -$size/6;
       margin-left: -$size/4;
       @include transform(rotate(-45deg));
-      border: rem(2px solid currentColor);
+      border: em(2px solid currentColor);
       border-top: 0;
       border-right: 0;
     }
@@ -34,7 +34,7 @@
 }
 
 @mixin icon-checkbox-unchecked($color) {
-  $size: rem(22px);
+  $size: em(22px);
   position: relative;
   color: $color;
   & > i {
@@ -42,10 +42,10 @@
     display: inline-block;
     width: $size;
     height: $size;
-    border-radius: rem(4px);
+    border-radius: em(4px);
     left: 50%;
     top: 50%;
-    border: rem(2px solid currentColor);
+    border: em(2px solid currentColor);
     margin-top: -$size/2;
     margin-left: -$size/2;
   }

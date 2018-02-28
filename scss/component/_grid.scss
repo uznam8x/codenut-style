@@ -1,28 +1,34 @@
 .row {
-  &::before, &::after {
-    display: table;
-    content: "";
-  }
-  &::after {
-    clear: both;
-  }
+  @include flexbox();
+  @include flex-wrap(wrap);
 }
 
-[class^="col"] {
+[class*="col"] {
   position: relative;
-  float: left;
   width: 100%;
+  min-height: 1px;
+  max-width: 100%;
+}
+
+html {
+  &::before {
+    display: none;
+    content: "{breakpoint:#{$breakpoint}}";
+  }
 }
 
 @for $i from 1 through 12 {
   .col--#{$i} {
-    width: percentage($i / 12);
+    @include flex(0 0 percentage($i / 12));
+    max-width: percentage($i / 12);
   }
-  .push--#{$i} {
-    left: percentage($i / 12);
+  .offset--#{$i} {
+    $num: $i / 12;
+    margin-left: if($num == 0, 0, percentage($num));
+
   }
-  .pull--#{$i} {
-    left: percentage(-$i / 12);
+  .order--#{$i} {
+    order: $i;
   }
 }
 
@@ -30,24 +36,16 @@
   @media (min-width: $width) {
     @for $i from 1 through 12 {
       .col--#{$point}-#{$i} {
-        width: percentage($i / 12);
-      }
-      .push--#{$point}-#{$i} {
-        left: percentage($i / 12);
+        @include flex(0 0 percentage($i / 12));
+        max-width: percentage($i / 12);
       }
       .offset--#{$point}-#{$i} {
-        margin-left: percentage($i / 12);
+        $num: $i / 12;
+        margin-left: if($num == 0, 0, percentage($num));
       }
-      .pull--#{$point}-#{$i} {
-        left: percentage(-$i / 12);
+      .order--#{$point}-#{$i} {
+        order: $i;
       }
     }
-  }
-}
-
-html {
-  &::before {
-    display: none;
-    content: "{breakpoint:#{$breakpoint}}";
   }
 }

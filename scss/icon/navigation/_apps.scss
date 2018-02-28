@@ -6,20 +6,20 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    width: rem($size);
-    height: rem($size);
-    margin-top: rem(-$size /2);
-    margin-left: rem(-$size /2);
+    width: em($size);
+    height: em($size);
+    margin-top: em(-$size /2);
+    margin-left: em(-$size /2);
     background-color: currentColor;
     @include css3-prefix('box-shadow', (
-        rem(-$size - 2) 0 0 0 currentColor,
-        rem($size + 2) 0 0 0 currentColor,
-        0 rem(-$size - 2) 0 0 currentColor,
-        0 rem($size + 2) 0 0 currentColor,
-        rem(-$size - 2) rem(-$size - 2) 0 0 currentColor,
-        rem($size + 2) rem($size + 2) 0 0 currentColor,
-        rem(-$size - 2) rem($size + 2) 0 0 currentColor,
-        rem($size + 2) rem(-$size - 2) 0 0 currentColor,
+        em(-$size - 2) 0 0 0 currentColor,
+        em($size + 2) 0 0 0 currentColor,
+        0 em(-$size - 2) 0 0 currentColor,
+        0 em($size + 2) 0 0 currentColor,
+        em(-$size - 2) em(-$size - 2) 0 0 currentColor,
+        em($size + 2) em($size + 2) 0 0 currentColor,
+        em(-$size - 2) em($size + 2) 0 0 currentColor,
+        em($size + 2) em(-$size - 2) 0 0 currentColor,
       )
     );
   }

@@ -1,5 +1,5 @@
 @mixin icon-radiobox-checked($color) {
-  $size: rem(22px);
+  $size: em(22px);
   position: relative;
   color: $color;
 
@@ -11,7 +11,7 @@
     border-radius: 50%;
     left: 50%;
     top: 50%;
-    border: rem(2px solid currentColor);
+    border: em(2px solid currentColor);
     margin-top: -$size/2;
     margin-left: -$size/2;
 
@@ -20,11 +20,11 @@
       position: absolute;
       left: 50%;
       top: 50%;
-      width: rem(10px);
-      height: rem(10px);
+      width: em(10px);
+      height: em(10px);
       border-radius: 50%;
-      margin-top: rem(-10px/2);
-      margin-left: rem(-10px/2);
+      margin-top: em(-10px/2);
+      margin-left: em(-10px/2);
       @include transform(rotate(-45deg));
       background-color: currentColor;
 
@@ -34,7 +34,7 @@
 }
 
 @mixin icon-radiobox-unchecked($color) {
-  $size: rem(22px);
+  $size: em(22px);
   position: relative;
   color: $color;
   & > i {
@@ -45,7 +45,7 @@
     border-radius: 50%;
     left: 50%;
     top: 50%;
-    border: rem(2px solid currentColor);
+    border: em(2px solid currentColor);
     margin-top: -$size/2;
     margin-left: -$size/2;
   }

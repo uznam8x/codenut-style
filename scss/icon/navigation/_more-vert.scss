@@ -1,5 +1,5 @@
 @mixin icon-more-vert($color) {
-  $size: rem(4px);
+  $size: em(4px);
   position: relative;
   color: $color;
 

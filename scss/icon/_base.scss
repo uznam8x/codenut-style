@@ -1,0 +1,10 @@
+[class*="nut-icon"]{
+  display: inline-block;
+  min-width: rem(48px);
+  min-height: rem(48px);
+  position: relative;
+  & > i {
+    display: inline-block;
+    position: absolute;
+  }
+}

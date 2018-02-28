@@ -6,13 +6,13 @@
     position: absolute;
     left: 50%;
     top: 50%;
-    margin-top: rem(-1px);
+    margin-top: em(-1px);
     &::before {
       content: "";
       position: absolute;
-      width: rem($size);
-      height: rem(2px);
-      margin-left: rem(-$size/2);
+      width: em($size);
+      height: em(2px);
+      margin-left: em(-$size/2);
       background-color: currentColor;
     }
   }

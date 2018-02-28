@@ -1,5 +1,5 @@
 @mixin icon-refresh($color) {
-  $size: rem(22px);
+  $size: em(22px);
   position: relative;
   color: $color;
   & > i {
@@ -10,7 +10,7 @@
     border-radius: 50%;
     left: 50%;
     top: 50%;
-    border: rem(2px solid currentColor);
+    border: em(2px solid currentColor);
     border-left-color:transparent;
     margin-top: -$size/2;
     margin-left: -$size/2;
@@ -20,11 +20,11 @@
       position: absolute;
       left: 0;
       top: 50%;
-      width: rem(8px);
-      height: rem(8px);
-      margin-top: rem(5px);
-      margin-left: rem(1px);
-      border: rem(2px solid currentColor);
+      width: em(8px);
+      height: em(8px);
+      margin-top: em(5px);
+      margin-left: em(1px);
+      border: em(2px solid currentColor);
       border-right-color: transparent;
       border-bottom-color: transparent;
       @include transform(rotate(-16deg));

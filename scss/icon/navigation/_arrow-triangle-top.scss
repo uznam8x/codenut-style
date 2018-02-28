@@ -1,5 +1,5 @@
 @mixin icon-arrow-triangle-top($color) {
-  $size: rem(8px);
+  $size: em(8px);
   position: relative;
   color: $color;
   & > i {
