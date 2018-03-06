@@ -1,6 +1,6 @@
 {
   "name": "codenut-style",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "codenut css framework",
   "main": "index.js",
   "scripts": {

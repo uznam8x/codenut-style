@@ -135,3 +135,162 @@ $property: (
 .no-mgn {
   margin: 0 !important;
 }
+
+.align--l {
+  text-align: left !important;
+}
+
+.align--c {
+  text-align: center !important;
+}
+
+.align--r {
+  text-align: right !important;
+}
+.align--t {
+  vertical-align: top !important;
+}
+
+.align--m {
+  vertical-align: middle !important;
+}
+
+.align--b {
+  vertical-align: bottom !important;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.prefix, .infix .suffix {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 99;
+  display: inline-block;
+  &::before {
+    display: inline-block;
+    width: 0;
+    height: 100%;
+    font-size: 0;
+    vertical-align: middle;
+    content: "";
+  }
+  & > * {
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+
+.prefix {
+  left: 0;
+}
+.suffix {
+  right: 0;
+}
+.infix {
+  left: 50%;
+  @include transform(translate(-50%, 0));
+}
+
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.no-wrap {
+  white-space: nowrap;
+}
+
+.clearfix::after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+
+@for $i from 0 through 10 {
+  $num: ($i + 10);
+  .lh--#{$num} {
+    line-height: ($i * .1) + 1;
+  }
+}
+
+@for $i from 1 through 6 {
+  $num: ($i * 100);
+  .fw--#{$num} {
+    font-weight: $num;
+  }
+}
+
+@for $i from 2 through 80 {
+  $num: $i * 2;
+  .fz--#{$num} {
+    font-size: rem($num * 1px) !important;
+  }
+}
+
+$property: (
+  pad:"padding",
+  mgn:"margin"
+);
+
+@each $key, $value in $property {
+  @for $i from 2 through 60 {
+    $num: ($i * 2);
+    $px: $num * 1px;
+    .#{$key}--t-#{$num} {
+      #{$value}-top: rem($px) !important;
+    }
+    .#{$key}--b-#{$num} {
+      #{$value}-bottom: rem($px) !important;
+    }
+    .#{$key}--l-#{$num} {
+      #{$value}-left: rem($px) !important;
+    }
+    .#{$key}--r-#{$num} {
+      #{$value}-right: rem($px) !important;
+    }
+    .#{$key}--x-#{$num} {
+      #{$value}-left: rem($px) !important;
+      #{$value}-right: rem($px) !important;
+    }
+    .#{$key}--y-#{$num} {
+      #{$value}-top: rem($px) !important;
+      #{$value}-bottom: rem($px) !important;
+    }
+    .#{$key}--a-#{$num} {
+      #{$value}: rem($px) !important;
+    }
+  }
+}
+
+.no-pad {
+  padding: 0 !important;
+}
+.no-mgn {
+  margin: 0 !important;
+}
+
+.fullscreen {
+  width: 100%;
+  height: 100%;
+}
+
+.fullwidth {
+  width: 100%;
+}
+
+.fullheight {
+  height: 100%;
+}
+
+.screen--wide {
+  height: 56.25%;
+}
+
+.screen--standard {
+  height: 75%;
+}

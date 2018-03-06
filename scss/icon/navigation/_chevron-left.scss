@@ -1,22 +1,22 @@
 @mixin icon-chevron-left($color) {
-  $size: em(16px);
+  $size:em(16px);
   position: relative;
   color: $color;
   & > i {
     position: absolute;
     left: 50%;
     top: 50%;
-    &::before {
+    &::before{
       content: '';
       position: absolute;
       margin-top: -$size/2;
-      margin-left: em(-13px);
+      margin-left: em(-3px);
       width: $size;
       height: $size;
       border:em(2px solid transparent);
-      border-bottom: em(solid 2px currentColor);
-      border-left: em(solid 2px currentColor);
-      @include transform(rotate(-135deg));
+      border-top: em(solid 2px currentColor);
+      border-right: em(solid 2px currentColor);
+      @include transform( rotate(-135deg) );
     }
   }
 
