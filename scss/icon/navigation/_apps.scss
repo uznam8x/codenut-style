@@ -1,25 +1,24 @@
 @mixin icon-apps($color) {
+  @include icon-base();
   $size: 6px;
-  position: relative;
   color: $color;
   & > i {
-    position: absolute;
     top: 50%;
     left: 50%;
-    width: em($size);
-    height: em($size);
-    margin-top: em(-$size /2);
-    margin-left: em(-$size /2);
+    width: $size;
+    height: $size;
+    margin-top: -$size /2;
+    margin-left: -$size /2;
     background-color: currentColor;
     @include css3-prefix('box-shadow', (
-        em(-$size - 2) 0 0 0 currentColor,
-        em($size + 2) 0 0 0 currentColor,
-        0 em(-$size - 2) 0 0 currentColor,
-        0 em($size + 2) 0 0 currentColor,
-        em(-$size - 2) em(-$size - 2) 0 0 currentColor,
-        em($size + 2) em($size + 2) 0 0 currentColor,
-        em(-$size - 2) em($size + 2) 0 0 currentColor,
-        em($size + 2) em(-$size - 2) 0 0 currentColor,
+        (-$size - 2) 0 0 0 currentColor,
+        ($size + 2) 0 0 0 currentColor,
+        0 (-$size - 2) 0 0 currentColor,
+        0 ($size + 2) 0 0 currentColor,
+        (-$size - 2) (-$size - 2) 0 0 currentColor,
+        ($size + 2) ($size + 2) 0 0 currentColor,
+        (-$size - 2) ($size + 2) 0 0 currentColor,
+        ($size + 2) (-$size - 2) 0 0 currentColor,
       )
     );
   }

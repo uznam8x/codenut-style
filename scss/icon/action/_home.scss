@@ -1,35 +1,32 @@
 @mixin icon-home($color) {
+  @include icon-base();
   $size: 18px;
-  position: relative;
   color: $color;
   & > i {
-    display: inline-block;
-    position: absolute;
     left:50%;
     top:50%;
-    margin-top: em(-11px);
-    margin-left: em(-12px);
+    margin-top: -11px;
+    margin-left: -12px;
     &::before, &::after{
       content:"";
       position: absolute;
-
     }
     &::before{
       width: 0;
       height: 0;
-      border: em(12px solid transparent);
+      border: 12px solid transparent;
       border-bottom-color: currentColor;
       border-top: 0;
     }
     &::after{
-      height: em(12px);
-      width: em(16px);
+      height: 12px;
+      width: 16px;
       display: block;
       position: absolute;
-      top: em(10px);
-      left: em(4px);
-      border: em(6px solid currentColor);
-      border-top-width: em(6px);
+      top: 10px;
+      left: 4px;
+      border: 6px solid currentColor;
+      border-top-width: 6px;
       border-bottom: 0;
     }
   }

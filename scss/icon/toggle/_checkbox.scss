@@ -1,17 +1,14 @@
 @mixin icon-checkbox-checked($color) {
-  $size: em(22px);
-  position: relative;
+  @include icon-base();
+  $size: 22px;
   color: $color;
-
   & > i {
-    position: absolute;
-    display: inline-block;
     width: $size;
     height: $size;
-    border-radius: em(4px);
+    border-radius: 4px;
     left: 50%;
     top: 50%;
-    border: em(2px solid currentColor);
+    border: 2px solid currentColor;
     margin-top: -$size/2;
     margin-left: -$size/2;
 
@@ -20,12 +17,12 @@
       position: absolute;
       left: 50%;
       top: 50%;
-      width: em(10px);
-      height: $size/4;
-      margin-top: -$size/6;
-      margin-left: -$size/4;
+      width: 10px;
+      height: 6px;
+      margin-top: -4px;
+      margin-left: -5px;
       @include transform(rotate(-45deg));
-      border: em(2px solid currentColor);
+      border: 2px solid currentColor;
       border-top: 0;
       border-right: 0;
     }
@@ -34,19 +31,17 @@
 }
 
 @mixin icon-checkbox-unchecked($color) {
+  @include icon-base();
   $size: em(22px);
-  position: relative;
   color: $color;
   & > i {
-    position: absolute;
-    display: inline-block;
     width: $size;
     height: $size;
     border-radius: em(4px);
     left: 50%;
     top: 50%;
-    border: em(2px solid currentColor);
-    margin-top: -$size/2;
+    border: 2px solid currentColor;
+    margin-top: em(-20px/2);
     margin-left: -$size/2;
   }
 

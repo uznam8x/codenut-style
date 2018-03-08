@@ -1,11 +1,9 @@
 @mixin icon-more-horiz($color) {
-  $size: em(4px);
-  position: relative;
+  @include icon-base();
+  $size: 4px;
   color: $color;
 
   & > i {
-    position: absolute;
-    display: inline-block;
     width: $size;
     height: $size;
     background-color: currentColor;

@@ -1,9 +1,8 @@
 @mixin icon-arrow-left($color) {
-  $size: em(16px);
-  position: relative;
+  @include icon-base();
+  $size: 16px;
   color: $color;
   & > i {
-    position: absolute;
     left: 50%;
     top: 50%;
     &::before, &::after {
@@ -15,8 +14,8 @@
     }
     &::before {
       width: $size+($size/4);
-      height: em(2px);
-      margin-top: em(-1px);
+      height: 2px;
+      margin-top: -1px;
       margin-left: -($size+($size/4))/2;
       background-color: currentColor;
     }
@@ -25,8 +24,8 @@
       height: $size;
       margin-top: -$size/2;
       margin-left: -$size/2;
-      border-top: em(solid 2px currentColor);
-      border-left: em(solid 2px currentColor);
+      border-top: solid 2px currentColor;
+      border-left: solid 2px currentColor;
       @include transform(rotate(-45deg));
     }
   }

@@ -1,13 +1,10 @@
 @mixin icon-menu($color) {
-  $size: em(24px);
-  position: relative;
+  @include icon-base();
+  $size: 24px;
   color: $color;
-
   & > i {
-    position: absolute;
-    display: inline-block;
     width: $size;
-    height: em(2px);
+    height: 2px;
     background-color: currentColor;
     left: 50%;
     top: 50%;
@@ -19,14 +16,14 @@
       left: 0;
       display: inline-block;
       width: $size;
-      height: em(2px);
+      height: 2px;
       background-color: currentColor;
     }
     &::before {
-      top: em(-9px);
+      top: -9px;
     }
     &::after {
-      top: em(8px);
+      top: 8px;
     }
   }
 

@@ -1,21 +1,20 @@
 @mixin icon-chevron-bottom($color) {
-  $size: em(16px);
-  position: relative;
+  @include icon-base();
+  $size: 16px;
   color: $color;
   & > i {
-    position: absolute;
     left: 50%;
     top: 50%;
     &::before {
       content: '';
       position: absolute;
-      margin-top: em(-13px);
+      margin-top: -13px;
       margin-left: -$size/2;
       width: $size;
       height: $size;
-      border:em(2px solid transparent);
-      border-top: em(solid 2px currentColor);
-      border-right: em(solid 2px currentColor);
+      border:2px solid transparent;
+      border-top: solid 2px currentColor;
+      border-right: solid 2px currentColor;
       @include transform(rotate(135deg));
     }
   }

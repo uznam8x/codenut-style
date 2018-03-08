@@ -1,9 +1,8 @@
 @mixin icon-arrow-triangle-top($color) {
-  $size: em(8px);
-  position: relative;
+  @include icon-base();
+  $size: 8px;
   color: $color;
   & > i {
-    position: absolute;
     left: 50%;
     top: 50%;
     &::before, &::after {

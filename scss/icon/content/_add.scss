@@ -1,18 +1,17 @@
 @mixin icon-add($color) {
+  @include icon-base();
   $size: 16px;
-  position: relative;
   color: $color;
   & > i {
-    position: absolute;
     left: 50%;
     top: 50%;
-    margin-top: em(-1px);
+    margin-top: -1px;
     &::before, &::after {
       content: "";
       position: absolute;
-      width: em($size);
-      height: em(2px);
-      margin-left: em(-$size/2);
+      width: $size;
+      height: 2px;
+      margin-left: -$size/2;
       background-color: currentColor;
     }
     &::after {

@@ -1,16 +1,14 @@
 @mixin icon-close($color) {
-  $size: em(26px);
-  position: relative;
+  @include icon-base();
+  $size: 26px;
   color: $color;
   & > i {
-    position: absolute;
     left: 50%;
     top: 50%;
-
     &::before, &::after {
       content: '';
       position: absolute;
-      margin-top: em(-1px);
+      margin-top: -1px;
       margin-left: -$size/2;
       width: $size;
       height: 2px;

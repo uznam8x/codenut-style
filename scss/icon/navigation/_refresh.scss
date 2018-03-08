@@ -1,16 +1,14 @@
 @mixin icon-refresh($color) {
-  $size: em(22px);
-  position: relative;
+  @include icon-base();
+  $size: 22px;
   color: $color;
   & > i {
-    position: absolute;
-    display: inline-block;
     width: $size;
     height: $size;
     border-radius: 50%;
     left: 50%;
     top: 50%;
-    border: em(2px solid currentColor);
+    border: 2px solid currentColor;
     border-left-color:transparent;
     margin-top: -$size/2;
     margin-left: -$size/2;
@@ -20,11 +18,11 @@
       position: absolute;
       left: 0;
       top: 50%;
-      width: em(8px);
-      height: em(8px);
-      margin-top: em(5px);
-      margin-left: em(1px);
-      border: em(2px solid currentColor);
+      width: 8px;
+      height: 8px;
+      margin-top: 5px;
+      margin-left: 1px;
+      border: 2px solid currentColor;
       border-right-color: transparent;
       border-bottom-color: transparent;
       @include transform(rotate(-16deg));

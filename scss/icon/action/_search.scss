@@ -1,17 +1,17 @@
 @mixin icon-search($color) {
+  @include icon-base();
   $size: 18px;
-  position: relative;
   color: $color;
   & > i {
     display: inline-block;
     position: absolute;
-    width: em($size);
-    height: em($size);
+    width: $size;
+    height: $size;
     top:50%;
     left:50%;
-    margin-top: em((-$size/2) - 1);
-    margin-left: em((-$size/2) - 1);
-    border: em(solid 2px currentColor);
+    margin-top: (-$size/2);
+    margin-left: (-$size/2);
+    border: solid 2px currentColor;
     border-radius: 50%;
     @include transform(rotate(-45deg));
     &::before {
@@ -19,9 +19,9 @@
       position: absolute;
       top: 100%;
       left: 50%;
-      margin-left: em(-1px);
-      height: em(7px);
-      width: em(2px);
+      margin-left: -1px;
+      height: 7px;
+      width: 2px;
       background-color: currentColor;
     }
   }
