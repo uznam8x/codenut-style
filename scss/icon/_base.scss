@@ -9,6 +9,6 @@
 }
 [class*="nut-icon"]{
   @include icon-base();
-  min-width: rem(48px);
-  min-height: rem(48px);
+  width: rem(48px);
+  height: rem(48px);
 }
