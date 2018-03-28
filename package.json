@@ -1,10 +1,9 @@
 {
   "name": "codenut-style",
-  "version": "0.1.5",
-  "description": "codenut css framework",
+  "version": "0.1.6",
+  "description": "UI css framework for Codenut",
   "main": "index.js",
   "scripts": {
-    "start": "gulp default",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -14,19 +13,19 @@
   "keywords": [
     "codenut",
     "css framework",
+    "ui",
     "codenut-style",
     "prisf",
     "uznam8x"
   ],
   "author": "uznam8x",
-  "license": "MIT",
+  "license": "GPLv2",
   "bugs": {
     "url": "https://github.com/uznam8x/codenut-style/issues"
   },
   "homepage": "http://codenut.prisf.com",
   "dependencies": {
     "gulp": "^3.9.1",
-    "gulp-nunjucks-render": "^2.2.2",
     "gulp-sass": "^3.1.0",
     "gulp-sass-glob": "^1.0.8"
   },

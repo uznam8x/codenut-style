@@ -1,0 +1,15 @@
+@include media-breakpoint-up(map-get($device, "mobile")) {
+  .mobile {
+    display: none !important;
+  }
+}
+@include media-breakpoint-up(map-get($device, "tablet")) {
+  .tablet {
+    display: none !important;
+  }
+}
+@include media-breakpoint-down(map-get($device, "tablet")) {
+  .desktop {
+    display: none !important;
+  }
+}

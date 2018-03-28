@@ -64,4 +64,3 @@ develop
 .idea/
 .DS_Store
 dist/
-gulpfile.js
