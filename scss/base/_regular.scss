@@ -100,9 +100,12 @@ $property: (
 );
 
 @each $key, $value in $property {
-  @for $i from 2 through 60 {
+  @for $i from 2 through 20 {
     $num: ($i * 2);
     $px: $num * 1px;
+    .#{$key}--#{$num} {
+      #{$value}: rem($px) !important;
+    }
     .#{$key}--t-#{$num} {
       #{$value}-top: rem($px) !important;
     }
@@ -122,9 +125,6 @@ $property: (
     .#{$key}--y-#{$num} {
       #{$value}-top: rem($px) !important;
       #{$value}-bottom: rem($px) !important;
-    }
-    .#{$key}--a-#{$num} {
-      #{$value}: rem($px) !important;
     }
   }
 }
