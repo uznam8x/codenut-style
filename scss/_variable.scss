@@ -1,20 +1,25 @@
 $font-base: 16px;
 $font-family: 'Roboto', sans-serif;
 $font-heading: (
-        h1: 40px,
-        h2: 36px,
-        h3: 32px,
-        h4: 28px,
-        h5: 24px,
-        h6: 20px,
+  h1: 48px,
+  h2: 40px,
+  h3: 31px,
+  h4: 25px,
+  h5: 20px,
+  h6: 16px,
+) !default;
+
+$lineheight: (
+  heading: 1.4,
+  paragraph: 1.6
 ) !default;
 
 $breakpoint: (
-        xs: 0,
-        sm: 414px,
-        md: 768px,
-        lg: 992px,
-        xl: 1200px
+  xs: 0,
+  sm: 414px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
 ) !default;
 
 $device: (
@@ -22,4 +27,11 @@ $device: (
   tablet:"lg",
 ) !default;
 
-$icon-color:#626262;
+$icon-color: #626262;
+
+
+
+
+
+
+

@@ -72,28 +72,6 @@
   content: "";
 }
 
-
-@for $i from 0 through 10 {
-  $num: ($i + 10);
-  .lh--#{$num} {
-    line-height: ($i * .1) + 1;
-  }
-}
-
-@for $i from 1 through 6 {
-  $num: ($i * 100);
-  .fw--#{$num} {
-    font-weight: $num;
-  }
-}
-
-@for $i from 2 through 80 {
-  $num: $i * 2;
-  .fz--#{$num} {
-    font-size: rem($num * 1px) !important;
-  }
-}
-
 $property: (
   pad:"padding",
   mgn:"margin"
