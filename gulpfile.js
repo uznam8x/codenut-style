@@ -4,7 +4,7 @@ const glob = require('gulp-sass-glob');
 
 /* SASS Option */
 const option = {
-  //*
+  /*
   outputStyle: 'expanded',
   /*/
   outputStyle: 'compressed',
