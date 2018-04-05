@@ -1,25 +1,33 @@
-.align--l {
-  text-align: left !important;
+@mixin r-align($name:""){
+  $point: '';
+  @if str_length($name) > 0 {
+    $point: '-'+$name;
+  }
+  .align-#{$point}-l {
+    text-align: left !important;
+  }
+
+  .align-#{$point}-c {
+    text-align: center !important;
+  }
+
+  .align-#{$point}-r {
+    text-align: right !important;
+  }
+
+  .align-#{$point}-t {
+    vertical-align: top !important;
+  }
+
+  .align-#{$point}-m {
+    vertical-align: middle !important;
+  }
+
+  .align-#{$point}-b {
+    vertical-align: bottom !important;
+  }
 }
 
-.align--c {
-  text-align: center !important;
-}
-
-.align--r {
-  text-align: right !important;
-}
-.align--t {
-  vertical-align: top !important;
-}
-
-.align--m {
-  vertical-align: middle !important;
-}
-
-.align--b {
-  vertical-align: bottom !important;
-}
 
 .hidden {
   display: none !important;
@@ -45,17 +53,6 @@
   }
 }
 
-.prefix {
-  left: 0;
-}
-.suffix {
-  right: 0;
-}
-.infix {
-  left: 50%;
-  @include transform(translate(-50%, 0));
-}
-
 .ellipsis {
   overflow: hidden;
   text-overflow: ellipsis;
@@ -77,32 +74,38 @@ $property: (
   mgn:"margin"
 );
 
-@each $key, $value in $property {
-  @for $i from 2 through 20 {
-    $num: ($i * 2);
-    $px: $num * 1px;
-    .#{$key}--#{$num} {
-      #{$value}: rem($px) !important;
-    }
-    .#{$key}--t-#{$num} {
-      #{$value}-top: rem($px) !important;
-    }
-    .#{$key}--b-#{$num} {
-      #{$value}-bottom: rem($px) !important;
-    }
-    .#{$key}--l-#{$num} {
-      #{$value}-left: rem($px) !important;
-    }
-    .#{$key}--r-#{$num} {
-      #{$value}-right: rem($px) !important;
-    }
-    .#{$key}--x-#{$num} {
-      #{$value}-left: rem($px) !important;
-      #{$value}-right: rem($px) !important;
-    }
-    .#{$key}--y-#{$num} {
-      #{$value}-top: rem($px) !important;
-      #{$value}-bottom: rem($px) !important;
+@mixin r-spacing($name:"") {
+  $point: '';
+  @if str_length($name) > 0 {
+    $point: '-'+$name;
+  }
+  @each $key, $value in $property {
+    @for $i from 0 through 40 {
+      $num: ($i * 2);
+      $px: $num * 1px;
+      .#{$key}-#{$point}-#{$num} {
+        #{$value}: rem($px) !important;
+      }
+      .#{$key}-#{$point}-t-#{$num} {
+        #{$value}-top: rem($px) !important;
+      }
+      .#{$key}-#{$point}-b-#{$num} {
+        #{$value}-bottom: rem($px) !important;
+      }
+      .#{$key}-#{$point}-l-#{$num} {
+        #{$value}-left: rem($px) !important;
+      }
+      .#{$key}-#{$point}-r-#{$num} {
+        #{$value}-right: rem($px) !important;
+      }
+      .#{$key}-#{$point}-x-#{$num} {
+        #{$value}-left: rem($px) !important;
+        #{$value}-right: rem($px) !important;
+      }
+      .#{$key}-#{$point}-y-#{$num} {
+        #{$value}-top: rem($px) !important;
+        #{$value}-bottom: rem($px) !important;
+      }
     }
   }
 }
@@ -110,6 +113,7 @@ $property: (
 .no-pad {
   padding: 0 !important;
 }
+
 .no-mgn {
   margin: 0 !important;
 }
@@ -128,10 +132,12 @@ $property: (
 }
 
 .screen--wide {
+  position: relative;
   height: 56.25%;
 }
 
 .screen--standard {
+  position: relative;
   height: 75%;
 }
 
@@ -142,4 +148,121 @@ $property: (
   line-height: 0;
   text-indent: -9999px;
   visibility: hidden;
+}
+
+.relative {
+  position: relative;
+}
+
+@mixin r-absolute($name:"") {
+  $point: '';
+  @if str_length($name) > 0 {
+    $point: '-'+$name;
+  }
+  .absolute-#{$point}-full {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .absolute-#{$point}-top-left {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  .absolute-#{$point}-top-center {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    @include transform(translateX(-50%));
+  }
+
+  .absolute-#{$point}-top-right {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  .absolute-#{$point}-bottom-left {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+
+  .absolute-#{$point}-bottom-center {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    @include transform(translateX(-50%));
+  }
+
+  .absolute-#{$point}-bottom-right {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+
+  .absolute-#{$point}-middle-left {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    @include transform(translateY(-50%));
+  }
+  .absolute-#{$point}-middle-right {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    @include transform(translateY(-50%));
+  }
+  .absolute-#{$point}-middle-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    @include transform(translate(-50%, -50%));
+  }
+}
+
+@mixin r-float($name:""){
+  $point: '';
+  @if str_length($name) > 0 {
+    $point: '-'+$name;
+  }
+  .float-#{$point}-l {
+    float: left;
+  }
+
+  .float-#{$point}-r {
+    float: right;
+  }
+}
+
+.float--clear {
+  &::after {
+    display: table;
+    clear: both;
+    content: "";
+  }
+}
+
+.container {
+  position: relative;
+  margin: 0 auto;
+  max-width: map-get($breakpoint, "xl");
+}
+
+@include r-spacing();
+@include r-absolute();
+@include r-align();
+@include r-float();
+@each $point, $width in $breakpoint {
+  @media (min-width: $width) {
+    @include r-absolute($point);
+    @include r-align($point);
+    @include r-spacing($point);
+    @include r-float($point);
+  }
 }

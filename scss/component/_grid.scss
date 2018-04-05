@@ -1,64 +1,91 @@
 .row {
-  @include flexbox();
-  @include flex-wrap(wrap);
-}
-
-[class*="col"] {
   position: relative;
-  width: 100%;
-  min-height: 1px;
-  max-width: 100%;
-}
-
-html {
   &::before {
-    display: none;
-    content: "{breakpoint:#{$breakpoint}}";
+    display: table;
+    content: " ";
+  }
+  &::after {
+    display: table;
+    content: " ";
+    clear: both;
   }
 }
 
-@for $i from 1 through 12 {
-  .col--#{$i} {
-    @include flex(0 0 percentage($i / 12));
-    max-width: percentage($i / 12);
-  }
-  .offset--#{$i} {
-    $num: $i / 12;
-    margin-left: if($num == 0, 0, percentage($num));
+[class*="col--"] {
+  display: block;
+  position: relative;
+  min-height: 1px;
+}
 
-  }
-  .order--#{$i} {
-    order: $i;
+.row.row--single {
+  display: table;
+  min-width: 100%;
+  & > [class*="col--"] {
+    float: none;
+    display: table-cell;
+    vertical-align: top;
   }
 }
 
-@for $i from 2 through 20 {
-  $num: ($i * 2);
-  $px: $num * 1px;
-  .gutter--#{$num} {
-    margin-right: rem(-$px);
-    margin-left: rem(-$px);
-    [class*='col--'] {
-      padding-right: rem($px);
-      padding-left: rem($px);
+@mixin grid-classes($name:'') {
+  $point: '';
+  @if str_length($name) > 0 {
+    $point: '-'+$name;
+  }
+  @for $i from 1 through 12 {
+    .col-#{$point}-#{$i} {
+      width: percentage($i / 12);
+      float: left;
+    }
+    .offset-#{$point}-#{$i} {
+      margin-left: percentage($i / 12);
+    }
+    .push-#{$point}-#{$i} {
+      left: percentage($i / 12);
+    }
+    .pull-#{$point}-#{$i} {
+      right: percentage($i / 12);
     }
   }
 }
 
+@mixin grid-gutter($name:""){
+  $point: '';
+  @if str_length($name) > 0 {
+    $point: '-'+$name;
+  }
+  @for $i from 2 through 20 {
+    $num: ($i * 2);
+    $px: $num * 1px;
+    .gutter-#{$point}-#{$num} {
+      margin-right: rem(-$px);
+      margin-left: rem(-$px);
+      & > [class*='col--'] {
+        padding-right: rem($px);
+        padding-left: rem($px);
+      }
+    }
+  }
+}
+
+@include grid-gutter();
+@include grid-classes();
 @each $point, $width in $breakpoint {
   @media (min-width: $width) {
-    @for $i from 1 through 12 {
-      .col--#{$point}-#{$i} {
-        @include flex(0 0 percentage($i / 12));
-        max-width: percentage($i / 12);
-      }
-      .offset--#{$point}-#{$i} {
-        $num: $i / 12;
-        margin-left: if($num == 0, 0, percentage($num));
-      }
-      .order--#{$point}-#{$i} {
-        order: $i;
+    @include grid-classes($point);
+    @include grid-gutter($point);
+    .row.row--single-#{$point} {
+      display: table;
+      min-width: 100%;
+      & > [class*='col--#{$point}'] {
+        display: table-cell;
+        vertical-align: top;
+        float: none;
       }
     }
   }
+  @media (max-width: $width) {
+
+  }
 }
+

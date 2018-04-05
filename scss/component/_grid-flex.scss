@@ -1,0 +1,59 @@
+.row {
+  @include flexbox();
+  @include flex-wrap(wrap);
+}
+
+[class*="col"] {
+  position: relative;
+  width: 100%;
+  min-height: 1px;
+  max-width: 100%;
+}
+
+html {
+  &::before {
+    display: none;
+    content: "{breakpoint:#{$breakpoint}}";
+  }
+}
+
+@mixin grid-classes($name:''){
+  $point:'';
+  @if str_length($name) > 0 {
+    $point:'-'+$name;
+  }
+  @for $i from 1 through 12 {
+    .col-#{$point}-#{$i} {
+      @include flex(0 0 percentage($i / 12));
+      max-width: percentage($i / 12);
+    }
+    .offset-#{$point}-#{$i} {
+      $num: $i / 12;
+      margin-left: if($num == 0, 0, percentage($num));
+
+    }
+    .order-#{$point}-#{$i} {
+      order: $i;
+    }
+  }
+}
+
+@for $i from 2 through 20 {
+  $num: ($i * 2);
+  $px: $num * 1px;
+  .gutter--#{$num} {
+    margin-right: rem(-$px);
+    margin-left: rem(-$px);
+    [class*='col--'] {
+      padding-right: rem($px);
+      padding-left: rem($px);
+    }
+  }
+}
+
+@include grid-classes();
+@each $point, $width in $breakpoint {
+  @media (min-width: $width) {
+    @include grid-classes($point);
+  }
+}
