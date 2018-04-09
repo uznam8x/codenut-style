@@ -1,19 +1,22 @@
-@include media-breakpoint-up(map-get($device, "mobile")) {
+@media screen and(min-width: map-get($breakpoint, map-get($device, "mobile"))) {
   .mobile {
     display: none !important;
   }
 }
-@include media-breakpoint-between('xs', map-get($device, "mobile")) {
-  .tablet {
-    display: none !important;
-  }
-}
-@include media-breakpoint-up(map-get($device, "tablet")) {
+
+@media screen and(min-width: map-get($breakpoint, "xs")) and (max-width: map-get($breakpoint, map-get($device, "mobile") )-1) {
   .tablet:not(.desktop) {
     display: none !important;
   }
 }
-@include media-breakpoint-down(map-get($device, "tablet")) {
+
+@media screen and(min-width: map-get($breakpoint, map-get($device, "tablet"))) {
+  .tablet:not(.desktop) {
+    display: none !important;
+  }
+}
+
+@media screen and(max-width: map-get($breakpoint, map-get($device, "tablet") ) - 1) {
   .desktop:not(.tablet) {
     display: none !important;
   }
