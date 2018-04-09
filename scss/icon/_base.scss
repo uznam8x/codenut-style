@@ -1,13 +1,14 @@
-@mixin icon-base(){
+@mixin icon-base() {
   display: inline-block;
   position: relative;
-  font-size:1rem;
+  font-size: 1rem;
   & > i {
     position: absolute;
     display: inline-block;
   }
 }
-[class*="nut-icon"]{
+
+[class*="nut-icon"] {
   @include icon-base();
   width: rem(48px);
   height: rem(48px);

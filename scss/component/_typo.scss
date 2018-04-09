@@ -44,7 +44,27 @@ h1, h2, h3, h4, h5, h6, .fz--tn, .fz--xs, .fz--sm, .fz--md, .fz--lg, .fz--xl {
 }
 
 p {
+  font-size: map-get($font-heading, h6);
   line-height: map-get($lineheight, "paragraph");
   text-rendering: optimizeLegibility;
   margin-bottom: 1rem;
+}
+
+dl {
+  dt {
+    font-size: map-get($font-heading, h5);
+    line-height: map-get($lineheight, "header");
+    font-weight: 400;
+    margin-bottom: 1rem;
+  }
+  dd {
+    font-size: map-get($font-heading, h6);
+    line-height: map-get($lineheight, "paragraph");
+  }
+}
+
+a {
+  display: block;
+  text-decoration: none;
+  color: #333;
 }
